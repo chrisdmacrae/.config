@@ -12,7 +12,7 @@ if ($WIN_VERSION -le 1903) {
     exit 1 
 }
 
-$STATE_PATH = Join-Path -Path $env:temp -ChildPath .config -AdditionalChildPath wsl2.json
+$STATE_PATH = Join-Path -Path $env:temp -ChildPath .config\wsl2.json
 $STATE = {
     enabled: $true
 }
@@ -31,7 +31,7 @@ if (!STATE.enabled) {
 }
 
 $WSL2_UPDATE_URI = 'https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi'
-$WSL2_UPDATE_PATH = Join-Path -Path $env:temp -ChildPath .config -AdditionalChildPath wsl_update_x64.msi
+$WSL2_UPDATE_PATH = Join-Path -Path $env:temp -ChildPath .config\wsl_update_x64.msi
 Invoke-WebRequest -Uri $WSL2_UPDATE_URI -Outfile $WSL2_UPDATE_PATH
 Start-Process -Wait msiexec /i $WSL2_UPDATE_PATH /quiet
 wsl --set-default-version 2
