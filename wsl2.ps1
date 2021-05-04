@@ -16,7 +16,7 @@ $STATE_PATH = Join-Path -Path $env:temp -ChildPath .config\wsl2.json
 $STATE = {
     enabled: $true
 }
-if (!Test-Path -Path $STATE_PATH) {
+if (!(Test-Path -Path $STATE_PATH)) {
     $STATE | ConvertTo-Json | Set-Content -Path $STATE_PATH
 }
 else {
