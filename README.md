@@ -8,7 +8,7 @@ You can use the quick-install method, by running the relevant command for your s
 
 ### Windows
 
-Run the following command from an admin-elevated powershell window\*:.
+Run the following command from an admin-elevated powershell window\*:
 
 ```powershell
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/chrisdmacrae/.config/main/install.ps1'))
