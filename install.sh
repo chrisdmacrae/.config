@@ -70,6 +70,10 @@ function Install() {
     source=$3
 
     {
+        if [ "$appName" = "nodejs" ]; then
+            brew install gnupg
+        fi
+
         if [ "$type" = 'app' ]; then
             brew install --cask "$appName"
         elif [ "$type" = 'tool' ]; then
@@ -77,6 +81,7 @@ function Install() {
         elif [ "$type" = 'library' ]; then
             asdf plugin add "$appName" "$source"
             asdf install "$appName" latest
+            asdf global "$appName" latest
         fi
     } || {
         echo "Failed to install $appName"
