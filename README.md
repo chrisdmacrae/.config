@@ -29,10 +29,10 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 
 > **Note:** this script will restart your computer once or twice and resume. Wait until the script re-opens after a restart and prompts you to close it before trying to use WSL.
 
-Once installed, follow the [Unix](#unix) instructions to configure tje WSL distribution(s) you selected!
+Once installed, follow the [Unix](#unix) instructions to configure the WSL distribution(s) you selected!
 
 ### Unix
 
 ```bash
-TODO
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/chrisdmacrae/.config/main/install.sh)"
 ```
