@@ -1,6 +1,6 @@
 # Install script for Windows-based systems
 
-## Script Inputs and Logic
+## Script Inputs
 $APP_NAMES = @(
     'git',
     'gh',
@@ -15,6 +15,9 @@ $APP_NAMES = @(
     'microsoft-windows-terminal',
     'spotify'
 )
+
+## Script Logic
+## Only modify after this point if you know what you're doing!
 
 function Prompt-YesNo($title, $message) {
     $yes = New-Object System.Management.Automation.Host.ChoiceDescription "&Yes","Description."

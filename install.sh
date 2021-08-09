@@ -1,7 +1,7 @@
 #!/bin/bash
 # Install script for Unix-based systems
 
-## Script Inputs and Logic
+## Script Inputs
 APP_NAMES=(
     'visual-studio-code'
     'spotify'
@@ -25,6 +25,9 @@ LIBRARIES=(
     "golang#https://github.com/kennyp/asdf-golang.git"
     "rust#https://github.com/asdf-community/asdf-rust.git"
 )
+
+## Script Logic
+## Only modify after this point if you know what you're doing!
 
 function Prompt-YesNo() {
     message=$1
@@ -83,10 +86,14 @@ function Install() {
 ## Script Execution
 echo "Welcome to .config"
 
+### Install Homebrew
+if ! command -v brew -v &> /dev/null; then
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
 ### Install OhMyZsh
-hash uninstall_oh_my_zsh > /dev/null
-if [ $? -eq 0 ]; then
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+if ! command -v uninstall_oh_my_zsh &> /dev/null; then
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 fi
 
 ### Install apps and tools
