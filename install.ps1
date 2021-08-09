@@ -84,15 +84,17 @@ Function Test-CommandExists($command) {
 
 Write-Output "Welcome to .config"
 
+### Install Chocolatey
 $HAS_CHOCOLATEY = Test-CommandExists 'choco'
 if (!$HAS_CHOCOLATEY) {
   Invoke-Expression ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))
   Set-Variable PATH="%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
 }
 
+### Install apps and tools
 $shouldPrompt = Prompt-YesNo(
-    "Auto-install?",
-    "Would you like to auto-install or choose which applications and tools to install?"
+    "Select apps?",
+    "Would you like to choose which applications and tools to install? If not, all will be auto-installed."
 ) -eq 1
 InstallApps $APP_NAMES $shouldPrompt
 
