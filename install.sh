@@ -70,7 +70,7 @@ function Install() {
     source=$3
 
     {
-        if [ "$appName" = "nodejs" ]; then
+        if [ "$appName" = "nodejs" ] && ! command -v brew info gnupg -v &> /dev/null; then
             brew install gnupg
         fi
 
