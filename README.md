@@ -6,7 +6,7 @@ A series of utilities for setting up a Unix or Windows system automatically
 
 You can use the quick-install method, by running the relevant command for your system.
 
-If you want to customize the script for your needs, download the relevant script for your operating system and then follow [configuration](#Configuration).
+If you want to customize the script for your needs, then follow [configuration](#Configuration).
 
 ### Windows
 
@@ -56,7 +56,7 @@ The Windows scripts install applications, tools, and libraries using [chocolatey
 
 ---
 
-For Windows, edit the `$APP_NAMES` variable list to add or remove new lines with the app identifier of the app you wish to support installing. You can use any app identifier from the [chocolatey packages registry](https://community.chocolatey.org/packages?page=2&prerelease=False).
+For Windows, download `install.ps1` and edit the `$APP_NAMES` variable list to add or remove new lines with the app identifier of the app you wish to support installing. You can use any app identifier from the [chocolatey packages registry](https://community.chocolatey.org/packages?page=2&prerelease=False).
 
 ### Unix
 
@@ -64,7 +64,13 @@ The Unix script uses [homebrew](https://brew.sh/) to install apps and tools, and
 
 ---
 
-For Unix, there are three variables you can edit:
+For Unix, download `install.sh`, then run the following command in the directory you downloaded it:
+
+```
+chmod 755 ./install.sh
+```
+
+Now, there are three variables you can edit:
 
 #### Apps
 `APP_NAMES`
