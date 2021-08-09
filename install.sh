@@ -22,6 +22,8 @@ TOOL_NAMES=(
 LIBRARIES=(
     "nodejs#https://github.com/asdf-vm/asdf-nodejs.git"
     "ruby#https://github.com/asdf-vm/asdf-ruby.git"
+    "golang#https://github.com/kennyp/asdf-golang.git"
+    "rust#https://github.com/asdf-community/asdf-rust.git"
 )
 
 function Prompt-YesNo() {
