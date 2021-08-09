@@ -70,6 +70,12 @@ function Install() {
     source=$3
 
     {
+        if [ "$appName" = "asdf" ]; then
+            ASDF_DATA_DIR=$(brew --prefix asdf)/
+            export ASDF_DATA_DIR
+            source "$ASDF_DATA_DIR"/asdf.sh
+        fi
+
         if [ "$appName" = "nodejs" ] && ! command -v brew info gnupg -v &> /dev/null; then
             brew install gnupg
         fi
